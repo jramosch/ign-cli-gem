@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+#this line ensures the computer/operating system knows this file needs ruby to run
+
+#create metacritic file so user can simply type file name to begin running program
+
+#puts "Welcome to Metacritic!"
+
+Metacritic::CLI.new.call

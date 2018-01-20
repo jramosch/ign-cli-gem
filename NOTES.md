@@ -11,6 +11,8 @@ How to Build a CLI Gem
 
 A command line interface for movies/video games ranked via Metacritic.
 
+User types "Metacritic"
+
 -Ask MOVIES OR VIDEO GAMES
 
 -"What're you looking for?"
