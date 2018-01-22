@@ -13,17 +13,25 @@ A command line interface for video games ranked via IGN.
 
 User types "IGN"
 
--Ask user to choose from a list of game_options
+-Ask user to choose a platform.
+
+from a list of game_options
 
 -"What're you looking for?"
 
 VIDEO GAMES
 Numbered list
 - "New Releases"
+  --sort by release date
 - "Top 10 Games"
+  --sort by rating
 - "Coming Soon"
+  --"http://www.ign.com/upcoming/games"
 - "Browse by platform"
+  --list_platforms
 - "Browse by genre"
+  --list_genres
 - "Browse by rating"
+  --"Choose a rating from 1 to 10"
 
 A game has a name, genre, platform, release date, rating, and url.
