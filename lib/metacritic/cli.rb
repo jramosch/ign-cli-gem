@@ -1,9 +1,11 @@
 #CLI Controller
+require 'pry'
 class Metacritic::CLI
 
   def call
     menu
     input = nil
+    binding.pry
     while input != "exit"
       puts "Movies or Games?"
       input = gets.downcase.chomp
@@ -22,7 +24,7 @@ class Metacritic::CLI
     puts "Welcome to Metacritic!"
     puts "---------------------"
     puts "This program will help you find movies or video games with good reviews!"
-    puts "NOTE: Type exit to leave program."
+    puts "NOTE: To leave program type 'exit'."
     puts "+++++++++++++++++++++++++++++++++"
   end
 
