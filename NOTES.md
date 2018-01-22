@@ -16,6 +16,7 @@ User types "IGN"
 -Ask user to choose a platform.
 
 PLATFORMS
+Numbered list
 - All
 - Xbox 360
 - PS3
@@ -28,13 +29,8 @@ PLATFORMS
 - PS4
 
 GAME OPTIONS
-
-from a list of game_options
-
--"What're you looking for?"
-
-VIDEO GAMES
 Numbered list
+- "Editor's Choice"
 - "New Releases"
   --sort by release date
 - "Top 10 Games"
