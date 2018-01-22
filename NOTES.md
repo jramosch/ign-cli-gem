@@ -15,6 +15,20 @@ User types "IGN"
 
 -Ask user to choose a platform.
 
+PLATFORMS
+- All
+- Xbox 360
+- PS3
+- PC
+- Wii U
+- 3DS
+- Vita
+- iPhone
+- Xbox One
+- PS4
+
+GAME OPTIONS
+
 from a list of game_options
 
 -"What're you looking for?"
