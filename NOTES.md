@@ -9,9 +9,9 @@ How to Build a CLI Gem
 7. Discover objects.
 8. Program
 
-A command line interface for movies/video games ranked via Metacritic.
+A command line interface for video games ranked via IGN.
 
-User types "Metacritic"
+User types "IGN"
 
 -Ask MOVIES OR VIDEO GAMES
 

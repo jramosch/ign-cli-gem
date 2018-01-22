@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "metacritic/version"
+require "ign/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "metacritic"
-  spec.version       = Metacritic::VERSION
+  spec.name          = "ign"
+  spec.version       = IGN::VERSION
   spec.authors       = ["'Jamilya Ramos-Chapman'"]
   spec.email         = ["'jamilya_ramos-chapman@alumni.brown.edu'"]
 
