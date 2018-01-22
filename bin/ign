@@ -3,6 +3,6 @@
 #this line ensures the computer/operating system knows this file needs ruby to run
 #create metacritic file, which basically provides environment. gateway for user.
 
-require './lib/metacritic'
+require './lib/ign'
 
-Metacritic::CLI.new.call
+IGN::CLI.new.call

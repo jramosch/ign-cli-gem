@@ -2,11 +2,11 @@ require 'open-uri'
 require 'nokogiri'
 require 'pry'
 
-require_relative "./metacritic/version"
-require_relative "./metacritic/game"
-require_relative "./metacritic/cli"
+require_relative "./ign/version"
+require_relative "./ign/game"
+require_relative "./ign/cli"
 
 
-module Metacritic
+module IGN
   # Your code goes here...
 end
