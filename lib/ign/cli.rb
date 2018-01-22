@@ -3,12 +3,36 @@ require 'pry'
 class IGN::CLI
 
   def call
+    welcome
     menu
+  end
+
+  def welcome
+    puts "                             ,--. "
+    puts "   ,---,  ,----..          ,--.'| "
+    puts ",`--.' | /   /   \\     ,--,:  : | "
+    puts "|   :  :|   :     : ,`--.'`|  ' : "
+    puts ":   |  '.   |  ;. / |   :  :  | | "
+    puts "|   :  |.   ; /--`  :   |   \\ | : "
+    puts "'   '  ;;   | ;  __ |   : '  '; | "
+    puts "|   |  ||   : |.' .''   ' ;.    ; "
+    puts "'   :  ;.   | '_.' :|   | | \\   | "
+    puts "|   |  ''   ; : \\  |'   : |  ; .' "
+    puts "'   :  |'   | '/  .'|   | '`--'   "
+    puts ";   |.' |   :    /  '   : |       "
+    puts "'---'    \\   \\ .'   ;   |.'       "
+    puts "          `---`     '---'         "
+    puts "----------------------------------"
+    puts "   Video game news and reviews!   "
+    puts "   To leave program type 'exit'   "
+    puts "++++++++++++++++++++++++++++++++++"
+  end
+
+  def menu
     input = nil
-    binding.pry
     while input != "exit"
-      puts "Movies or Games?"
-      input = gets.downcase.chomp
+      puts movie_options
+      input = gets.strip.downcase
       if input == "movies"
         puts "movie_options"
       elsif input == "games"
@@ -20,16 +44,8 @@ class IGN::CLI
     end
   end
 
-  def menu
-    puts "Welcome to Metacritic!"
-    puts "---------------------"
-    puts "This program will help you find movies or video games with good reviews!"
-    puts "NOTE: To leave program type 'exit'."
-    puts "+++++++++++++++++++++++++++++++++"
-  end
-
   def movie_options
-
+    puts "1. "
   end
 
 end
