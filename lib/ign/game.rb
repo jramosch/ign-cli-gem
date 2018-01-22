@@ -1,4 +1,4 @@
-class Metacritic::Game
+class IGN::Game
   attr_accessor :name, :genre, :rating, :platform
 
   def self.scrape

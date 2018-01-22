@@ -1,6 +1,6 @@
 #CLI Controller
 require 'pry'
-class Metacritic::CLI
+class IGN::CLI
 
   def call
     menu
