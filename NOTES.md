@@ -13,33 +13,17 @@ A command line interface for video games ranked via IGN.
 
 User types "IGN"
 
--Ask MOVIES OR VIDEO GAMES
+-Ask user to choose from a list of game_options
 
 -"What're you looking for?"
-
-MOVIES
-Numbered list
-- "New Releases"
-- "Coming Soon"
-- "Browse by genre"
-- "Watch Now"
 
 VIDEO GAMES
 Numbered list
 - "New Releases"
 - "Top Games"
+- "Coming Soon"
 - "Browse by platform"
 - "Browse by genre"
+- "Browse by rating"
 
-
-Show a list of products
-
-PCH Digital Pulse Massager - $27 - Still available!
-Lenovo ThinkPad 11E 11.6 - $199.99 - Still available!
-Which product do you want to learn more about?
-
-1
-
-What is a deal?
-
-A deal has a name A deal has a price A deal has a URL a deal has an avaiablity.
+A game has a name, genre, platform, rating, and url.
