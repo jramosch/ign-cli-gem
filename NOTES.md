@@ -20,10 +20,10 @@ User types "IGN"
 VIDEO GAMES
 Numbered list
 - "New Releases"
-- "Top Games"
+- "Top 10 Games"
 - "Coming Soon"
 - "Browse by platform"
 - "Browse by genre"
 - "Browse by rating"
 
-A game has a name, genre, platform, rating, and url.
+A game has a name, genre, platform, release date, rating, and url.
