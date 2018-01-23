@@ -45,3 +45,5 @@ Numbered list
   --"Choose a rating from 1 to 10"
 
 A game has a name, genre, platform, release date, rating, and url.
+
+Need a scraper class to generated game objects with scraped information on each game from website.
