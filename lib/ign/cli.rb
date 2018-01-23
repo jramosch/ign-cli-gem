@@ -31,7 +31,7 @@ class IGN::CLI
   def menu
     input = nil
     while input != "exit"
-      puts movie_options
+      puts games_options
       input = gets.strip.downcase
       if input == "movies"
         puts "movie_options"
@@ -44,7 +44,7 @@ class IGN::CLI
     end
   end
 
-  def movie_options
+  def games_options
     puts "1. "
   end
 
