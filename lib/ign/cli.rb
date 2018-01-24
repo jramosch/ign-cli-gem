@@ -32,22 +32,27 @@ class IGN::CLI
   def menu
     input = nil
     while input != "exit"
-      puts games_options
+      games_options
       input = gets.strip.downcase
-      if input == "movies"
-        puts "movie_options"
-      elsif input == "games"
-        puts "games_options"
+      if input == "1"
+
       else
-        puts "Sorry, don't recognize your command."
+        puts "Sorry, please enter 1-6 or type exit to leave."
+        games_options
         input = gets.downcase.chomp
       end
     end
   end
 
   def games_options
+    puts "Choose from the below (1-6)"
     puts "1. Editor's Choice"
-    puts
+    puts "2. New Releases"
+    puts "3. Top 10 Games"
+    puts "4. Coming Soon"
+    puts "5. Browse by platform"
+    puts "6. Browse by genre"
+    #puts "7. Browse by rating"-- not sure about this
   end
 
 end

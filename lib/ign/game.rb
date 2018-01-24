@@ -25,6 +25,7 @@ class IGN::Game
         @@all << game
       end
     end
+    @@front_page
   end
 
   def self.editors_choice
@@ -37,5 +38,6 @@ class IGN::Game
         @@all << game
       end
     end
+    @@editors_choice
   end
 end
