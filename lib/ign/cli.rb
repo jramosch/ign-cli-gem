@@ -27,7 +27,7 @@ class IGN::CLI
     puts "   Video game news and reviews!   "
     puts "   To leave program type 'exit'   "
     puts "++++++++++++++++++++++++++++++++++"
-    binding.pry
+#    binding.pry
   end
 
   def make_games
@@ -45,7 +45,7 @@ class IGN::CLI
       elsif input == "2"
         puts "New Releases Here"
       elsif input == "3"
-
+        Game.top_games
       else
         puts "Sorry, please enter 1-6 or type exit to leave."
         games_options

@@ -5,8 +5,4 @@ require 'pry'
 require_relative "./ign/version"
 require_relative "./ign/game"
 require_relative "./ign/cli"
-
-
-module IGN
-  # Your code goes here...
-end
+require_relative "./ign/scraper"
