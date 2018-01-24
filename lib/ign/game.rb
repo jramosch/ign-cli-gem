@@ -1,7 +1,9 @@
 class IGN::Game
   attr_accessor :name, :genre, :rating, :platform
 
-  #@@all = []
+  @@all = []
+  @@front_page = []
+  @@editors_choice =[]
 
   def initialize(game_hash)
     game_hash.each {|key,value| self.send(("#{key}="),value)}
@@ -20,6 +22,9 @@ class IGN::Game
     games_array.each do |game_hash|
       game = self.new(game_hash)
       @@front_page << game
+      if @@all.all? { |g| g.name != game.name }
+        @@all << game
+      end
     end
   end
 
@@ -28,7 +33,10 @@ class IGN::Game
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
-      @@front_page << game
+      @@editors_choice << game
+      if @@all.all? { |g| g.name != game.name }
+        @@all << game
+      end
     end
   end
 end
