@@ -58,4 +58,12 @@ class IGN::Game
       puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
     end
   end
+
+  def self.top_games
+    sorted_games = Games.all.sort_by{ |i| i.rating}.reverse
+    sorted_games.each.with_index(1) do |game, i|
+      break if i > 10
+      puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
+    end
+  end
 end

@@ -41,7 +41,11 @@ class IGN::CLI
       games_options
       input = gets.strip.downcase
       if input == "1"
-        
+        Game.list_editors_choice
+      elsif input == "2"
+        puts "New Releases Here"
+      elsif input == "3"
+
       else
         puts "Sorry, please enter 1-6 or type exit to leave."
         games_options

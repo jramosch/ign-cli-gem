@@ -46,4 +46,7 @@ Numbered list
 
 A game has a name, genre, platform, release date, rating, and url.
 
+DISPLAY EX;
+1. "Dragon Ball FighterZ - 8.5/10 - Playstation 4"
+
 Need a scraper class to generated game objects with scraped information on each game from website.
