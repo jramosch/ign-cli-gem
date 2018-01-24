@@ -1,36 +1,34 @@
 class IGN::Game
   attr_accessor :name, :genre, :rating, :platform
 
-  @@all = []
+  #@@all = []
 
   def initialize(game_hash)
-    student_hash.each {|key,value| self.send(("#{key}="),value)}
-    @@all << self
+    game_hash.each {|key,value| self.send(("#{key}="),value)}
+    #@@all << self
   end
 
-  def self.scrape(ign_url)
-    scraped_games = []
-    html = ign_url
-    doc = Nokogiri::HTML(open("http://www.ign.com/reviews/games"))
-
-    games = doc.css("div.itemList-item")
-
-    games.each do |game|
-      scraped_game = {}
-      scraped_game[:name] = game.css("div.item-title a").text.strip
-      scraped_game[:platform] = game.css("span.item-platform").text
-      scraped_game[:genre] = game.css("span.item-genre").text.strip
-      scraped_game[:rating] = game.css("span.scoreBox-score").text
-
-      scraped_games << scraped_game
+  def self.create_from_collection(games_array)
+    games_array.each do |game_hash|
+      game = self.new(game_hash)
     end
-
-    scraped_games
   end
 
-  def self.scrape_editors_choice
-    doc = Nokogiri::HTML(open("http://www.ign.com/editors-choice/games"))
+  def self.front_page
+    games_array = Scraper.scrape("http://www.ign.com/reviews/games")
+
+    games_array.each do |game_hash|
+      game = self.new(game_hash)
+      @@front_page << game
+    end
   end
 
+  def self.editors_choice
+    games_array = Scraper.scrape("http://www.ign.com/editors-choice/games")
 
+    games_array.each do |game_hash|
+      game = self.new(game_hash)
+      @@front_page << game
+    end
+  end
 end
