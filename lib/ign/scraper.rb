@@ -14,6 +14,7 @@ class IGN::Scraper
       scraped_game[:platform] = game.css("span.item-platform").text
       scraped_game[:genre] = game.css("span.item-genre").text.strip
       scraped_game[:rating] = game.css("span.scoreBox-score").text
+      scraped_game[:release_date] = game.css("div.grid_3 div")[0].text
       scraped_game[:url] = game.css("li a")[0]["href"]
 
       scraped_games << scraped_game

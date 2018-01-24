@@ -46,8 +46,8 @@ class IGN::CLI
   end
 
   def games_options
+    puts "1. Editor's Choice"
     puts
   end
 
 end
-  
