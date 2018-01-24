@@ -3,6 +3,7 @@ require 'pry'
 class IGN::CLI
 
   def call
+    make_games
     welcome
     menu
   end
@@ -29,13 +30,18 @@ class IGN::CLI
     binding.pry
   end
 
+  def make_games
+    Game.scrape_front_page
+    Game.scrape_editors_choice
+  end
+
   def menu
     input = nil
     while input != "exit"
       games_options
       input = gets.strip.downcase
       if input == "1"
-
+        
       else
         puts "Sorry, please enter 1-6 or type exit to leave."
         games_options
@@ -52,6 +58,7 @@ class IGN::CLI
     puts "4. Coming Soon"
     puts "5. Browse by platform"
     puts "6. Browse by genre"
+    puts "7. List All"
     #puts "7. Browse by rating"-- not sure about this
   end
 

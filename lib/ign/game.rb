@@ -2,8 +2,8 @@ class IGN::Game
   attr_accessor :name, :platform, :genre, :rating, :release_date, :url
 
   @@all = []
-  @@front_page = []
-  @@editors_choice =[]
+  #@@front_page = []
+  #@@editors_choice =[]
 
   def initialize(game_hash)
     game_hash.each {|key,value| self.send(("#{key}="),value)}
@@ -15,29 +15,47 @@ class IGN::Game
     end
   end
 
-  def self.front_page
+  def self.scrape_front_page
+    @front_page = []
     games_array = Scraper.scrape("http://www.ign.com/reviews/games")
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
-      @@front_page << game
+      @front_page << game
       if @@all.all? { |g| g.name != game.name }
         @@all << game
       end
     end
-    @@front_page
   end
 
-  def self.editors_choice
+  def self.scrape_editors_choice
+    @editors_choice = []
     games_array = Scraper.scrape("http://www.ign.com/editors-choice/games")
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
-      @@editors_choice << game
+      @editors_choice << game
       if @@all.all? { |g| g.name != game.name }
         @@all << game
       end
     end
-    @@editors_choice
+  end
+
+  def self.list_editors_choice
+    make_list(@editors_choice)
+  end
+
+  def self.list_front_page
+    make_list(@front_page)
+  end
+
+  def self.list_all
+    make_list(@@all)
+  end
+
+  def make_list(games)
+    games.each.with_index(1) do |game, i|
+      puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
+    end
   end
 end
