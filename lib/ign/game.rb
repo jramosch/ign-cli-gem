@@ -41,6 +41,13 @@ class IGN::Game
     end
   end
 
+  def self.make_list(games)
+    games.each.with_index(1) do |game, i|
+      puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
+    end
+  end
+  #binding.pry
+
   def self.list_editors_choice
     make_list(@editors_choice)
   end
@@ -53,17 +60,15 @@ class IGN::Game
     make_list(@@all)
   end
 
-  def make_list(games)
-    games.each.with_index(1) do |game, i|
-      puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
-    end
-  end
-
   def self.top_games
-    sorted_games = Games.all.sort_by{ |i| i.rating}.reverse
+    sorted_games = @@all.sort_by{ |i| i.rating}.reverse
     sorted_games.each.with_index(1) do |game, i|
       break if i > 10
       puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
     end
+  end
+
+  def self.all
+    @@all
   end
 end

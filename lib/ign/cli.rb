@@ -27,7 +27,7 @@ class IGN::CLI
     puts "   Video game news and reviews!   "
     puts "   To leave program type 'exit'   "
     puts "++++++++++++++++++++++++++++++++++"
-#    binding.pry
+    #binding.pry
   end
 
   def make_games
@@ -36,10 +36,10 @@ class IGN::CLI
   end
 
   def menu
-    input = nil
-    while input != "exit"
-      games_options
-      input = gets.strip.downcase
+    games_options
+    input = gets.strip.downcase
+    while input != "exit" || input != (1..6)
+      puts "Please enter 1-6 or type exit to leave."
       if input == "1"
         IGN::Game.list_editors_choice
       elsif input == "2"
@@ -47,7 +47,6 @@ class IGN::CLI
       elsif input == "3"
         IGN::Game.top_games
       else
-        puts "Sorry, please enter 1-6 or type exit to leave."
         games_options
         input = gets.downcase.chomp
       end
@@ -63,7 +62,6 @@ class IGN::CLI
     puts "5. Browse by platform"
     puts "6. Browse by genre"
     puts "7. List All"
-    #puts "7. Browse by rating"-- not sure about this
   end
 
 end
