@@ -31,8 +31,8 @@ class IGN::CLI
   end
 
   def make_games
-    Game.scrape_front_page
-    Game.scrape_editors_choice
+    IGN::Game.scrape_front_page
+    IGN::Game.scrape_editors_choice
   end
 
   def menu
@@ -41,11 +41,11 @@ class IGN::CLI
       games_options
       input = gets.strip.downcase
       if input == "1"
-        Game.list_editors_choice
+        IGN::Game.list_editors_choice
       elsif input == "2"
         puts "New Releases Here"
       elsif input == "3"
-        Game.top_games
+        IGN::Game.top_games
       else
         puts "Sorry, please enter 1-6 or type exit to leave."
         games_options
