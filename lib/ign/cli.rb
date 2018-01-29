@@ -36,10 +36,11 @@ class IGN::CLI
   end
 
   def menu
-    games_options
-    input = gets.strip.downcase
+    input = nil
     while input != "exit" || input != (1..6)
+      games_options
       puts "Please enter 1-6 or type exit to leave."
+      input = gets.strip.downcase
       if input == "1"
         IGN::Game.list_editors_choice
       elsif input == "2"
