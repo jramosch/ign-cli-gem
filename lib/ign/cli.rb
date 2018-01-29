@@ -36,21 +36,21 @@ class IGN::CLI
   end
 
   def menu
-    input = nil
-    while input != "exit" || input != (1..6)
-      games_options
-      puts "Please enter 1-6 or type exit to leave."
-      input = gets.strip.downcase
-      if input == "1"
-        IGN::Game.list_editors_choice
-      elsif input == "2"
-        puts "New Releases Here"
-      elsif input == "3"
-        IGN::Game.top_games
-      else
-        games_options
-        input = gets.downcase.chomp
-      end
+    games_options
+    puts "Please enter 1-6 or type exit to leave."
+    input = gets.strip.downcase
+    case input
+    when "1"
+      IGN::Game.list_editors_choice
+    when "2"
+      puts "New Releases Here"
+    when "3"
+      IGN::Game.top_games
+    when "exit"
+      goodbye
+    else
+      puts "Sorry. Please try again."
+      menu
     end
   end
 
