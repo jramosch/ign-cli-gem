@@ -27,7 +27,7 @@ class IGN::Scraper
     scraped_games = []
     doc = Nokogiri::HTML(open("http://www.ign.com/editors-choice/games"))
 
-    games = doc.css("div.gameList")
+    games = doc.css("div.gameList-game")
 
     games.each do |game|
       scraped_game = {}
