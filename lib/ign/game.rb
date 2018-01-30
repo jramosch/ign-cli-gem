@@ -3,7 +3,7 @@ class IGN::Game
 
   @@all = []
   #@@front_page = []
-  @@editors_choice =[]
+  #@@editors_choice =[]
 
   def initialize(game_hash)
     game_hash.each {|key,value| self.send(("#{key}="),value)}
@@ -63,8 +63,7 @@ class IGN::Game
 
   def self.top_games
     sorted_games = @@all.sort_by{ |i| i.rating}.reverse
-    sorted_games.each.with_index(1) do |game, i|
-      break if i > 10
+    sorted_games.take(10).each.with_index(1) do |game, i|
       puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
     end
   end
