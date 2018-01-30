@@ -46,10 +46,10 @@ class IGN::Game
     #@coming_soon = []
     games = IGN::Scraper.scrape_coming_soon
 
-    games.take(9).each.with_index(1) do |game, i|
-      game = self.new(games)
+    games.take(9).each.with_index(1) do |game_hash, i|
+      game = self.new(game_hash)
       @@coming_soon << game
-      puts "#{i}. #{game[:name]} (#{game[:platform]}) - #{game[:release_date]}"
+      puts "#{i}. #{game.name} (#{game.platform}) - #{game.release_date}"
     end
   end
 
