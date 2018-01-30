@@ -31,31 +31,31 @@ class IGN::CLI
   end
 
   def make_games
-    IGN::Game.front_page
-    IGN::Game.editors_choice
+    IGN::Game.make_front_page
+    IGN::Game.make_editors_choice
   end
 
   def menu
-    #binding.pry
     games_options
     puts "Please enter 1-6 or type exit to leave."
     input = gets.strip.downcase
     case input
     when "1"
       IGN::Game.list_editors_choice
-      review_menu(IGN::Game.editors_choice)
+      games_menu(IGN::Game.editors_choice)
     when "2"
       IGN::Game.list_front_page
-      review_menu(IGN::Game.front_page)
+      games_menu(IGN::Game.front_page)
     when "3"
-      IGN::Game.coming_soon
+      IGN::Game.make_coming_soon
+      games_menu(IGN::Game.coming_soon)
     when "4"
       puts "Lists platforms. Then displays all games that match platforms."
     when "5"
       puts "Lists genres. Then displays all games that match genres."
     when "6"
       IGN::Game.list_all
-      review_menu(IGN::Game.list_all)
+      games_menu(IGN::Game.list_all)
     when "exit"
       goodbye
     else
@@ -74,12 +74,12 @@ class IGN::CLI
     puts "6. List All"
   end
 
-  def review_menu(games)
-    puts "Which review would you like to see?"
+  def games_menu(games)
+    puts "Which do you want more info on?"
     input = gets.strip.to_i
 
     puts "CLICK HERE:"
-    games[input-1][:url]
+    games[input-1].url
   end
 
 end
