@@ -45,7 +45,8 @@ class IGN::CLI
       IGN::Game.list_editors_choice
       games_menu(IGN::Game.editors_choice)
     when "2"
-      IGN::Game.top_games
+      IGN::Game.list_front_page
+      games_menu(IGN::Game.front_page)
     when "3"
       IGN::Game.coming_soon
     when "4"
@@ -66,12 +67,11 @@ class IGN::CLI
   def games_options
     puts "Choose from the below (1-6)"
     puts "1. Editor's Choice"
-    puts "2. Top 10 Games"
+    puts "2. New Releases"
     puts "3. Coming Soon"
     puts "4. Browse by platform"
     puts "5. Browse by genre"
     puts "6. List All"
-    #puts "7. Search"
   end
 
   def games_menu(games)
