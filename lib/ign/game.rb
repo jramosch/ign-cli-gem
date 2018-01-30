@@ -49,7 +49,7 @@ class IGN::Game
 
 
   def self.list_editors_choice
-    binding.pry
+    #binding.pry
     make_list(@editors_choice)
   end
 
