@@ -31,8 +31,8 @@ class IGN::CLI
   end
 
   def make_games
-    IGN::Game.scrape_front_page
-    IGN::Game.scrape_editors_choice
+    IGN::Game.front_page
+    IGN::Game.editors_choice
   end
 
   def menu

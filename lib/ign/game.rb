@@ -3,7 +3,7 @@ class IGN::Game
 
   @@all = []
   #@@front_page = []
-  #@@editors_choice =[]
+  @@editors_choice =[]
 
   def initialize(game_hash)
     game_hash.each {|key,value| self.send(("#{key}="),value)}
@@ -15,9 +15,9 @@ class IGN::Game
     end
   end
 
-  def self.scrape_front_page
+  def self.front_page
     @front_page = []
-    games_array = IGN::Scraper.scrape("http://www.ign.com/reviews/games")
+    games_array = IGN::Scraper.scrape_front_page
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
@@ -28,9 +28,9 @@ class IGN::Game
     end
   end
 
-  def self.scrape_editors_choice
+  def self.editors_choice
     @editors_choice = []
-    games_array = IGN::Scraper.scrape("http://www.ign.com/editors-choice/games")
+    games_array = IGN::Scraper.scrape_editors_choice
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
@@ -46,9 +46,10 @@ class IGN::Game
       puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
     end
   end
-  #binding.pry
+
 
   def self.list_editors_choice
+    binding.pry
     make_list(@editors_choice)
   end
 
