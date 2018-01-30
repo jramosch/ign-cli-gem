@@ -78,8 +78,11 @@ class IGN::CLI
     puts "Which do you want more info on?"
     input = gets.strip.to_i
 
-    puts "CLICK HERE:"
-    games[input-1].url
+    puts "CLICK HERE: #{games[input-1].url}"
+  end
+
+  def goodbye
+    puts "Bye Bye!"
   end
 
 end
