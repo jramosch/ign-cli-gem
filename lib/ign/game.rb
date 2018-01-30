@@ -69,6 +69,14 @@ class IGN::Game
     end
   end
 
+  def self.coming_soon
+    games = IGN::Scraper.scrape_coming_soon
+
+    games.take(9).each.with_index(1) do |game, i|
+      puts "#{i}. #{game[:name]} (#{game[:platform]}) - #{game[:release_date]}"
+    end
+  end
+
   def self.all
     @@all
   end

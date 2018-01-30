@@ -44,5 +44,22 @@ class IGN::Scraper
     scraped_games
   end
 
+  def self.scrape_coming_soon
+    scraped_games = []
+    doc = Nokogiri::HTML(open("http://www.ign.com/reviews/games"))
+
+    games = doc.css("div.column-game")
+
+    games.each do |game|
+      scraped_game = {}
+      scraped_game[:name] = game.css("a.game-title").text.strip
+      scraped_game[:platform] = game.css("span.game-platform").text
+      scraped_game[:release_date] = game.css("div.date").text
+
+      scraped_games << scraped_game
+    end
+
+    scraped_games
+  end
 
 end

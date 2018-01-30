@@ -45,7 +45,7 @@ class IGN::CLI
     when "2"
       IGN::Game.top_games
     when "3"
-
+      IGN::Game.coming_soon
     when "exit"
       goodbye
     else
