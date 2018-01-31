@@ -59,6 +59,19 @@ class IGN::Game
     end
   end
 
+  def self.list_platforms
+    platforms = (@@all.collect {|game| game.platform}).uniq
+    platforms.each.with_index(1) do |platform,i|
+      puts "#{i}. #{platform}"
+    end
+  end
+
+  def self.list_genres
+    genres = (@@all.collect {|game| game.genre}).uniq
+    genres.each.with_index(1) do |genre,i|
+      puts "#{i}. #{genre}"
+    end
+  end
 
   def self.list_editors_choice
     make_list(@@editors_choice)

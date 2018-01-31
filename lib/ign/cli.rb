@@ -50,8 +50,10 @@ class IGN::CLI
       IGN::Game.make_coming_soon
       games_menu(IGN::Game.coming_soon)
     when "4"
+      IGN::Game.list_platforms
       puts "Lists platforms. Then displays all games that match platforms."
     when "5"
+      IGN::Game.list_genres
       puts "Lists genres. Then displays all games that match genres."
     when "6"
       IGN::Game.list_all
