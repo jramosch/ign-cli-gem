@@ -51,10 +51,10 @@ class IGN::CLI
       games_menu(IGN::Game.coming_soon)
     when "4"
       IGN::Game.list_platforms
-      puts "Lists platforms. Then displays all games that match platforms."
+      attributes_menu(IGN::Game.platforms, "platform")
     when "5"
       IGN::Game.list_genres
-      puts "Lists genres. Then displays all games that match genres."
+      attributes_menu(IGN::Game.genres, "genre")
     when "6"
       IGN::Game.list_all
       games_menu(IGN::Game.list_all)
@@ -81,6 +81,23 @@ class IGN::CLI
     input = gets.strip.to_i
 
     puts "CLICK HERE: #{games[input-1].url}"
+  end
+
+  def attributes_menu(games, choice)
+    puts "Which #{choice} would you like to see?"
+
+    input = gets.strip.to_i
+    number = games[input-1]
+
+    if choice == "platform"
+      games = IGN::Game.all.select { |game| game.platform == "#{number}"}
+      IGN::Game.make_list(games)
+      games_menu(games)
+    else
+      games = IGN::Game.all.select { |game| game.genre == "#{number}"}
+      IGN::Game.make_list(games)
+      games_menu(games)
+    end
   end
 
   def goodbye
