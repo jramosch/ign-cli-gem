@@ -37,7 +37,6 @@ class IGN::CLI
 
   def menu
     games_options
-    puts "Please enter 1-6 or type exit to leave."
     input = gets.strip.downcase
     case input
     when "1"
@@ -67,7 +66,7 @@ class IGN::CLI
   end
 
   def games_options
-    puts "Choose from the below (1-6)"
+    puts "Choose from the below (1-6) or type exit to leave."
     puts "1. Editor's Choice"
     puts "2. New Releases"
     puts "3. Coming Soon"
@@ -77,10 +76,19 @@ class IGN::CLI
   end
 
   def games_menu(games)
-    puts "Which do you want more info on?"
+    puts "Which review would you like to see?"
     input = gets.strip.to_i
 
     puts "CLICK HERE: #{games[input-1].url}"
+    puts " "
+    puts "Is that all? (Y/N)"
+    input = gets.strip.downcase
+    if input == "n"
+      menu
+    else
+      goodbye
+    end
+
   end
 
   def attributes_menu(games, choice)
