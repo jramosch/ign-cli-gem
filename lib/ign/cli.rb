@@ -37,6 +37,7 @@ class IGN::CLI
 
   def menu
     games_options
+    puts " "
     input = gets.strip.downcase
     case input
     when "1"
@@ -47,7 +48,7 @@ class IGN::CLI
       games_menu(IGN::Game.front_page)
     when "3"
       IGN::Game.make_coming_soon
-      games_menu(IGN::Game.coming_soon)
+      games_menu(IGN::Game.coming_soon,"coming soon")
     when "4"
       IGN::Game.list_platforms
       attributes_menu(IGN::Game.platforms, "platform")
@@ -60,13 +61,16 @@ class IGN::CLI
     when "exit"
       goodbye
     else
+      puts " "
       puts "Sorry. Please try again."
+      puts " "
       menu
     end
   end
 
   def games_options
     puts "Choose from the below (1-6) or type exit to leave."
+    puts " "
     puts "1. Editor's Choice"
     puts "2. New Releases"
     puts "3. Coming Soon"
@@ -75,8 +79,14 @@ class IGN::CLI
     puts "6. List All"
   end
 
-  def games_menu(games)
-    puts "Which review would you like to see?"
+  def games_menu(games,list=nil)
+    if list == "coming soon"
+      puts " "
+      puts "Which would you like more info on?"
+    else
+      puts " "
+      puts "Which review would you like to see?"
+    end
     input = gets.strip.to_i
 
     puts "CLICK HERE: #{games[input-1].url}"
@@ -92,23 +102,27 @@ class IGN::CLI
   end
 
   def attributes_menu(games, choice)
+    puts " "
     puts "Which #{choice} would you like to see?"
-
     input = gets.strip.to_i
+    puts " "
     number = games[input-1]
 
     if choice == "platform"
       games = IGN::Game.all.select { |game| game.platform == "#{number}"}
       IGN::Game.make_list(games)
+      puts " "
       games_menu(games)
     else
       games = IGN::Game.all.select { |game| game.genre == "#{number}"}
       IGN::Game.make_list(games)
+      puts " "
       games_menu(games)
     end
   end
 
   def goodbye
+    puts " "
     puts "Bye Bye!"
   end
 
