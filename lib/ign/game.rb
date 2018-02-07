@@ -17,7 +17,6 @@ class IGN::Game
   end
 
   def self.make_front_page
-    #@front_page = []
     games_array = IGN::Scraper.scrape_front_page
 
     games_array.each do |game_hash|
@@ -30,7 +29,6 @@ class IGN::Game
   end
 
   def self.make_editors_choice
-    #@editors_choice = []
     games_array = IGN::Scraper.scrape_editors_choice
 
     games_array.each do |game_hash|
@@ -43,7 +41,6 @@ class IGN::Game
   end
 
   def self.make_coming_soon
-    #@coming_soon = []
     games = IGN::Scraper.scrape_coming_soon
 
     games.take(9).each.with_index(1) do |game_hash, i|
