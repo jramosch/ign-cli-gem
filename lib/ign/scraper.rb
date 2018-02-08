@@ -58,7 +58,7 @@ class IGN::Scraper
       scraped_game[:platform] = game.css("span.game-platform").text
       scraped_game[:release_date] = game.css("div.date").text
       scraped_game[:url] = game.css("a")[0]["href"]
-      scraped_game[:description] = scrape_description(scraped_game[:url])
+      scraped_game[:description] = scrape_description(game.css("a")[0]["href"])
 
       scraped_games << scraped_game
     end
@@ -69,7 +69,7 @@ class IGN::Scraper
   def self.scrape_description(url)
     doc = Nokogiri::HTML(open("#{url}"))
 
-    description = doc.css("div.description")
+    description = doc.css("div.description").text.strip
     description
   end
 

@@ -88,6 +88,7 @@ class IGN::CLI
     puts "Genre: #{games[i].genre}"
     puts "----------------------------------"
     puts "#{games[i].description}"
+    puts " "
     puts "Read more here: #{games[i].url}"
     puts " "
     puts "Is that all? (Y/N)"
