@@ -2,6 +2,6 @@
 
 #this line ensures the computer/operating system knows this file needs ruby to run
 
-require './lib/ign'
+require '../lib/ign'
 
 IGN::CLI.new.call
