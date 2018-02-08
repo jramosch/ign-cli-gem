@@ -1,5 +1,4 @@
 #CLI Controller
-require 'pry'
 class IGN::CLI
 
   def call
@@ -27,7 +26,6 @@ class IGN::CLI
     puts "   Video game news and reviews!   "
     puts "   To leave program type 'exit'   "
     puts "++++++++++++++++++++++++++++++++++"
-    #binding.pry
   end
 
   def make_games
