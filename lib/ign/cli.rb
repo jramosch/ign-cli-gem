@@ -88,7 +88,7 @@ class IGN::CLI
     puts "Genre: #{games[i].genre}"
     puts "----------------------------------"
     puts "#{games[i].description}"
-    puts "Read the full review here: #{games[i].url}"
+    puts "Read more here: #{games[i].url}"
     puts " "
     puts "Is that all? (Y/N)"
     input = gets.strip.downcase
