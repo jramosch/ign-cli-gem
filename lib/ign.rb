@@ -1,6 +1,3 @@
-module IGN
-end
-
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
