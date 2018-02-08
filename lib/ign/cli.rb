@@ -46,7 +46,7 @@ class IGN::CLI
       games_menu(IGN::Game.front_page)
     when "3"
       IGN::Game.make_coming_soon
-      games_menu(IGN::Game.coming_soon,"coming soon")
+      games_menu(IGN::Game.coming_soon)
     when "4"
       IGN::Game.list_platforms
       attributes_menu(IGN::Game.platforms, "platform")
@@ -77,14 +77,9 @@ class IGN::CLI
     puts "6. List All"
   end
 
-  def games_menu(games,list=nil)
-    if list == "coming soon"
+  def games_menu(games)
       puts " "
       puts "Which would you like more info on?"
-    else
-      puts " "
-      puts "Which review would you like to see?"
-    end
     input = gets.strip.to_i
 
     puts "CLICK HERE: #{games[input-1].url}"
