@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "IGN Video Game Reviews"
   spec.description   = "Provides details on current and upcoming video games reviewed by IGN."
-  spec.homepage      = "https://github.com/jramosch/ign-cli-gem"
+  spec.homepage      = "https://rubygems.org/gems/ign-reviews"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
