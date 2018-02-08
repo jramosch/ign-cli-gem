@@ -1,5 +1,5 @@
 class IGN::Game
-  attr_accessor :name, :platform, :genre, :rating, :release_date, :url, :genres, :platforms
+  attr_accessor :name, :platform, :genre, :rating, :release_date, :url, :description, :genres, :platforms
 
   @@all = []
   @@front_page = []

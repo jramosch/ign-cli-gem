@@ -16,7 +16,7 @@ class IGN::Scraper
       scraped_game[:rating] = game.css("span.scoreBox-score").text
       scraped_game[:release_date] = game.css("div.grid_3 div")[0].text
       scraped_game[:url] = game.css("li a")[0]["href"]
-      scraped_game[:description] = game.css()
+      scraped_game[:description] = game.css("p.item-details").text
 
       scraped_games << scraped_game
     end
@@ -38,6 +38,7 @@ binding.pry
       scraped_game[:rating] = game.css("span.scoreBox-score").text
       scraped_game[:release_date] = game.css("div.grid_3 div")[0].text
       scraped_game[:url] = game.css("li a")[0]["href"]
+      scraped_game[:description] = game.css("p.game-details").text
 
       scraped_games << scraped_game
     end
