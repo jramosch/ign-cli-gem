@@ -78,11 +78,17 @@ class IGN::CLI
   end
 
   def games_menu(games)
-      puts " "
-      puts "Which would you like more info on?"
+    puts " "
+    puts "Which would you like more info on?"
     input = gets.strip.to_i
-
-    puts "CLICK HERE: #{games[input-1].url}"
+    i = input - 1
+    puts " "
+    puts "#{games[i].name} - #{games[i].platform}"
+    puts "Rating: #{games[i].rating}/10"
+    puts "Genre: #{games[i].genre}"
+    puts "----------------------------------"
+    puts "#{games[i].description}"
+    puts "Read the full review here: #{games[i].url}"
     puts " "
     puts "Is that all? (Y/N)"
     input = gets.strip.downcase

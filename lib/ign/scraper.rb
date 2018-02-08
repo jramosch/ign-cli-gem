@@ -16,14 +16,14 @@ class IGN::Scraper
       scraped_game[:rating] = game.css("span.scoreBox-score").text
       scraped_game[:release_date] = game.css("div.grid_3 div")[0].text
       scraped_game[:url] = game.css("li a")[0]["href"]
-      scraped_game[:description] = game.css("p.item-details").text
+      scraped_game[:description] = game.css("p.item-details").text.split(/\s+- /).delete_if{|space|space == ""}[1]
 
       scraped_games << scraped_game
     end
 
     scraped_games
   end
-binding.pry
+
   def self.scrape_editors_choice
     scraped_games = []
     doc = Nokogiri::HTML(open("http://www.ign.com/editors-choice/games"))
@@ -38,7 +38,7 @@ binding.pry
       scraped_game[:rating] = game.css("span.scoreBox-score").text
       scraped_game[:release_date] = game.css("div.grid_3 div")[0].text
       scraped_game[:url] = game.css("li a")[0]["href"]
-      scraped_game[:description] = game.css("p.game-details").text
+      scraped_game[:description] = game.css("p.game-details").text.split(/\s+- /).delete_if{|space|space == ""}[1]
 
       scraped_games << scraped_game
     end

@@ -52,7 +52,7 @@ class IGN::Game
 
   def self.make_list(games)
     games.each.with_index(1) do |game, i|
-      puts "#{i}. #{game.name} - #{game.rating}/10 - #{game.platform}"
+      puts "#{i}. #{game.name} - #{game.platform}"
     end
   end
 
