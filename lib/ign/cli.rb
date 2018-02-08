@@ -89,7 +89,7 @@ class IGN::CLI
     puts "----------------------------------"
     puts "#{games[i].description}"
     puts " "
-    puts "Read more here: #{games[i].url}"
+    puts "Read more here: #{games[i].url.colorize(:blue)}"
     puts " "
     puts "Is that all? (Y/N)"
     input = gets.strip.downcase
