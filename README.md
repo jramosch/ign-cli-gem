@@ -10,7 +10,7 @@ This Ruby Gem provides a CLI to view video game reviews via IGN's website. You c
 
 Type the below and follow the on screen prompts.
 
-    $ worlds-best-restaurants
+    $ ign
 
 ## Development
 
