@@ -1,6 +1,6 @@
 #this will collect game details into hashes to create game objects from
 
-class IGN::Scraper
+class IGNReviews::Scraper
 
   def self.scrape_front_page
     scraped_games = []

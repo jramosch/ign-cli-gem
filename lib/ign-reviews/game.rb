@@ -1,4 +1,4 @@
-class IGN::Game
+class IGNReviews::Game
   attr_accessor :name, :platform, :genre, :rating, :release_date, :url, :description, :genres, :platforms
 
   @@all = []
@@ -17,7 +17,7 @@ class IGN::Game
   end
 
   def self.make_front_page
-    games_array = IGN::Scraper.scrape_front_page
+    games_array = IGNReviews::Scraper.scrape_front_page
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
@@ -29,7 +29,7 @@ class IGN::Game
   end
 
   def self.make_editors_choice
-    games_array = IGN::Scraper.scrape_editors_choice
+    games_array = IGNReviews::Scraper.scrape_editors_choice
 
     games_array.each do |game_hash|
       game = self.new(game_hash)
@@ -41,7 +41,7 @@ class IGN::Game
   end
 
   def self.make_coming_soon
-    games = IGN::Scraper.scrape_coming_soon
+    games = IGNReviews::Scraper.scrape_coming_soon
 
     games.take(9).each.with_index(1) do |game_hash, i|
       game = self.new(game_hash)

@@ -4,13 +4,13 @@ This Ruby Gem provides a CLI to view video game reviews via IGN's website. You c
 
 ## Installation
 
-    $ gem install ign
+    $ gem install ign-reviews
 
 ## Usage
 
 Type the below and follow the on screen prompts.
 
-    $ ign
+    $ ign-reviews
 
 ## Development
 
